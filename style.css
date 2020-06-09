@@ -1,58 +1,73 @@
 body {
-	font-family: 'SF UI Display', 'Ubuntu', 'Roboto', 'Arial', sans-serif;
-	background-color: #23303f;
-	color: #dedeef;
+  font-family: 'SF UI Display', 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  background-color: #23303f;
+  color: #dedeef;
+  text-align: center;
 }
 
 h1 {
-	font-family: 'Fira Mono', 'Fira Code', monospace;
+  font-family: 'Fira Mono', 'Fira Code', monospace;
 }
 
 a {
-	color: #dedeef;
-	text-decoration: none;
+  color: #dedeef;
+  text-decoration: none;
 }
 
 a:hover {
-	color: #eceff5;
+  color: #eceff5;
 }
 
 a:visited {
-	color: #dedede;
+  color: #dedede;
 }
 
-.creodimension{
-	display: flex;
+header, main {
+  padding: 2ex;
+}
+
+.u-flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+section {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: 1em;
 }
 
  /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-	font-family: 'SF UI Display', 'Ubuntu', 'Roboto', 'Arial', sans-serif;
-	background-color: #444a52;
-	color: #dedeef;
-	cursor: pointer;
-	padding: 5px;
-	width: 100%;
-	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 18px;
+  font-family: 'SF UI Display', 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  background-color: #444a52;
+  color: #dedeef;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
+.active>button, .collapsible:hover {
   background-color: #555a62;
+}
+
+.active>.content {
+  max-height: none;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
   padding: 0 10px;
-  // display: none;
   overflow: hidden;
   max-height: 0;
   background-color: #333a42;
   transition: max-height 0.2s ease-out;
-} 
+}
 
 .collapsible:after {
   content: '+'; /* Unicode character for "plus" sign (+) */
@@ -62,6 +77,6 @@ a:visited {
   margin-left: 5px;
 }
 
-.active:after {
+.active>button:after {
   content: "-"; /* Unicode character for "minus" sign (-) */
 }
